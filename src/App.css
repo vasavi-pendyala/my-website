@@ -1,0 +1,1221 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================
+   MAIN BACKGROUND
+========================================= */
+
+.birthday-app {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 180, 210, 0.35),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(220, 180, 255, 0.3),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fff7fa,
+      #fff0f6
+    );
+
+  color: #555;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.birthday-screen {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 80px 20px;
+
+  z-index: 2;
+
+  animation: screenIn 0.7s ease;
+}
+
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.birthday-card {
+  position: relative;
+
+  width: min(550px, 92vw);
+
+  min-height: 620px;
+
+  padding: 70px 40px 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(255,247,250,0.96)
+    );
+
+  border: 1px solid rgba(224, 155, 180, 0.35);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(190, 90, 130, 0.13);
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   TOP LIGHTS
+========================================= */
+
+.lights {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+.lights::before {
+  content: "";
+
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+
+  top: 20px;
+
+  height: 45px;
+
+  border-top: 2px solid #b87c92;
+
+  border-radius: 50%;
+}
+
+.lights span {
+  position: relative;
+
+  width: 14px;
+  height: 22px;
+
+  margin-top: 27px;
+
+  border-radius: 50%;
+
+  animation: lightBlink 1.5s infinite alternate;
+}
+
+.lights span:nth-child(1) {
+  background: #ff8eb4;
+  box-shadow: 0 0 15px #ff8eb4;
+}
+
+.lights span:nth-child(2) {
+  background: #ffd166;
+  box-shadow: 0 0 15px #ffd166;
+}
+
+.lights span:nth-child(3) {
+  background: #82d9e8;
+  box-shadow: 0 0 15px #82d9e8;
+}
+
+.lights span:nth-child(4) {
+  background: #b77cff;
+  box-shadow: 0 0 15px #b77cff;
+}
+
+.lights span:nth-child(5) {
+  background: #ff8b7b;
+  box-shadow: 0 0 15px #ff8b7b;
+}
+
+.lights span:nth-child(6) {
+  background: #8ee3b1;
+  box-shadow: 0 0 15px #8ee3b1;
+}
+
+.lights span:nth-child(7) {
+  background: #ff83bf;
+  box-shadow: 0 0 15px #ff83bf;
+}
+
+.lights span:nth-child(8) {
+  background: #ffd166;
+  box-shadow: 0 0 15px #ffd166;
+}
+
+.lights span:nth-child(9) {
+  background: #9c8cff;
+  box-shadow: 0 0 15px #9c8cff;
+}
+
+.lights span:nth-child(10) {
+  background: #ff8da1;
+  box-shadow: 0 0 15px #ff8da1;
+}
+
+@keyframes lightBlink {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon-container {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+
+  width: 75px;
+  height: 95px;
+
+  border-radius: 50% 50% 48% 48%;
+
+  opacity: 0.9;
+
+  animation: balloonFloat 5s ease-in-out infinite;
+}
+
+.balloon::before {
+  content: "";
+
+  position: absolute;
+
+  bottom: -8px;
+  left: 50%;
+
+  width: 0;
+  height: 0;
+
+  transform: translateX(-50%);
+
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid currentColor;
+}
+
+.balloon::after {
+  content: "";
+
+  position: absolute;
+
+  top: 92px;
+  left: 50%;
+
+  width: 1px;
+  height: 130px;
+
+  background: rgba(130, 80, 110, 0.5);
+
+  transform: translateX(-50%);
+}
+
+.balloon span {
+  position: absolute;
+
+  top: 33px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  color: rgba(255,255,255,0.55);
+
+  font-size: 25px;
+}
+
+.balloon-pink {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #ffd4e4,
+      #f879a9
+    );
+
+  color: #f879a9;
+
+  box-shadow:
+    inset -10px -12px 20px rgba(180, 40, 100, 0.15),
+    0 8px 20px rgba(230, 100, 150, 0.15);
+}
+
+.balloon-purple {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #eadcff,
+      #a66de5
+    );
+
+  color: #a66de5;
+
+  box-shadow:
+    inset -10px -12px 20px rgba(100, 40, 170, 0.15),
+    0 8px 20px rgba(130, 80, 200, 0.15);
+}
+
+.balloon-blue {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #d9f7ff,
+      #6cc6df
+    );
+
+  color: #6cc6df;
+}
+
+.balloon-orange {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #fff0d0,
+      #ffae70
+    );
+
+  color: #ffae70;
+}
+
+
+/* Balloon positions */
+
+.b1 {
+  left: 3%;
+  top: 18%;
+
+  animation-delay: 0s;
+}
+
+.b2 {
+  right: 4%;
+  top: 12%;
+
+  animation-delay: 1s;
+}
+
+.b3 {
+  left: 5%;
+  bottom: 12%;
+
+  animation-delay: 2s;
+}
+
+.b4 {
+  right: 5%;
+  bottom: 17%;
+
+  animation-delay: 0.5s;
+}
+
+.b5 {
+  left: 14%;
+  top: 48%;
+
+  width: 55px;
+  height: 72px;
+
+  animation-delay: 1.5s;
+}
+
+.b6 {
+  right: 14%;
+  top: 48%;
+
+  width: 55px;
+  height: 72px;
+
+  animation-delay: 2.5s;
+}
+
+@keyframes balloonFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(3deg);
+  }
+}
+
+.clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  background: white;
+  border-radius: 100px;
+  opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 80px;
+  height: 80px;
+  left: 30px;
+  bottom: 20px;
+}
+
+.cloud::after {
+  width: 100px;
+  height: 100px;
+  right: 25px;
+  bottom: 10px;
+}
+
+.cloud1 {
+  left: -30px;
+  bottom: -10px;
+}
+
+.cloud2 {
+  right: -40px;
+  bottom: -20px;
+}
+
+.cloud3 {
+  left: 35%;
+  bottom: -40px;
+  transform: scale(0.7);
+}
+
+/* =========================================
+   CLOUDS
+========================================= */
+
+.clouds {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 130px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.8;
+}
+
+.cloud {
+  position: absolute;
+
+  bottom: -40px;
+
+  width: 250px;
+  height: 100px;
+
+  background: rgba(255,255,255,0.9);
+
+  border-radius: 100px;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+
+  position: absolute;
+
+  background: white;
+
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 110px;
+  height: 110px;
+
+  left: 35px;
+  bottom: 25px;
+}
+
+.cloud::after {
+  width: 140px;
+  height: 140px;
+
+  right: 25px;
+  bottom: 15px;
+}
+
+.cloud1 {
+  left: -80px;
+}
+
+.cloud2 {
+  left: 35%;
+
+  transform: scale(1.2);
+}
+
+.cloud3 {
+  right: -80px;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.floating-hearts {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+.floating-hearts span {
+  position: absolute;
+
+  color: #f39ab8;
+
+  opacity: 0.6;
+
+  animation: heartFloat 6s infinite ease-in-out;
+}
+
+.floating-hearts span:nth-child(1) {
+  left: 12%;
+  top: 35%;
+}
+
+.floating-hearts span:nth-child(2) {
+  left: 25%;
+  top: 65%;
+
+  animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(3) {
+  right: 12%;
+  top: 32%;
+
+  animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+  right: 25%;
+  top: 70%;
+
+  animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(5) {
+  left: 45%;
+  top: 15%;
+
+  animation-delay: 1.5s;
+}
+
+.floating-hearts span:nth-child(6) {
+  right: 40%;
+  bottom: 20%;
+
+  animation-delay: 2.5s;
+}
+
+@keyframes heartFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.15);
+  }
+}
+
+
+/* =========================================
+   ICONS
+========================================= */
+
+.gift-icon,
+.heart-icon,
+.party-icon,
+.present-icon,
+.wish-face {
+  font-size: 58px;
+
+  line-height: 1;
+
+  margin-bottom: 30px;
+
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.subtitle {
+  margin-bottom: 20px;
+
+  color: #80606d;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+
+  line-height: 1.7;
+}
+
+.birthday-card h1 {
+  margin-bottom: 20px;
+
+  color: #c64e78;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(50px, 8vw, 72px);
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.birthday-card h2 {
+  margin-bottom: 20px;
+
+  color: #c64e78;
+
+  font-size: clamp(38px, 7vw, 56px);
+
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.description {
+  color: #77656c;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+.wave {
+  display: inline-block;
+
+  animation: wave 1.5s infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.birthday-card button {
+  margin-top: 32px;
+
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e36c96,
+      #cc5780
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(200, 80, 120, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+.birthday-card button:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 15px 30px rgba(200, 80, 120, 0.35);
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.dots {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: auto;
+
+  padding-top: 40px;
+}
+
+.dots i {
+  display: block;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #d8d0d4;
+}
+
+.dots i.active {
+  background: #df668f;
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================
+   CAKE
+========================================= */
+
+.cake {
+  position: relative;
+
+  width: 230px;
+  height: 190px;
+
+  margin: 20px auto 5px;
+}
+
+.cake-plate {
+  position: absolute;
+
+  left: 20px;
+  bottom: 15px;
+
+  width: 190px;
+  height: 18px;
+
+  background: #f5d8df;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 8px 10px rgba(160,80,100,0.15);
+}
+
+.cake-body {
+  position: absolute;
+
+  left: 35px;
+  bottom: 30px;
+
+  width: 160px;
+  height: 85px;
+
+  background:
+    linear-gradient(
+      #fff8fa 0 35%,
+      #f87fa2 36% 100%
+    );
+
+  border-radius: 10px 10px 18px 18px;
+
+  border: 2px solid #efb4c5;
+}
+
+.cake-icing {
+  position: absolute;
+
+  left: 35px;
+  bottom: 91px;
+
+  width: 160px;
+  height: 38px;
+
+  background: #fff;
+
+  border-radius: 50%;
+
+  border: 2px solid #f4d5df;
+
+  z-index: 3;
+}
+
+.cake-icing span {
+  position: absolute;
+
+  bottom: -13px;
+
+  width: 25px;
+  height: 25px;
+
+  background: #f77da0;
+
+  border-radius: 0 0 15px 15px;
+}
+
+.cake-icing span:nth-child(1) {
+  left: 25px;
+}
+
+.cake-icing span:nth-child(2) {
+  left: 70px;
+}
+
+.cake-icing span:nth-child(3) {
+  right: 20px;
+}
+
+.candle {
+  position: absolute;
+
+  left: 108px;
+  bottom: 123px;
+
+  width: 15px;
+  height: 50px;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 5px,
+      #ef7195 5px,
+      #ef7195 10px
+    );
+
+  border-radius: 5px;
+
+  z-index: 5;
+}
+
+.flame {
+  position: absolute;
+
+  top: -24px;
+  left: 3px;
+
+  width: 10px;
+  height: 18px;
+
+  background: #ffbd32;
+
+  border-radius: 50% 50% 50% 50%;
+
+  box-shadow:
+    0 0 15px #ffb000;
+
+  animation: flame 0.5s infinite alternate;
+}
+
+@keyframes flame {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
+.sprinkles b {
+  position: absolute;
+
+  width: 7px;
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: #ff7ca3;
+}
+
+.sprinkles b:nth-child(1) {
+  left: 25px;
+  top: 30px;
+}
+
+.sprinkles b:nth-child(2) {
+  left: 60px;
+  top: 20px;
+
+  background: #8ecae6;
+}
+
+.sprinkles b:nth-child(3) {
+  left: 90px;
+  top: 35px;
+
+  background: #ffd166;
+}
+
+.sprinkles b:nth-child(4) {
+  left: 120px;
+  top: 22px;
+
+  background: #b98cff;
+}
+
+.sprinkles b:nth-child(5) {
+  left: 45px;
+  top: 50px;
+
+  background: #ff8fa3;
+}
+
+.sprinkles b:nth-child(6) {
+  left: 110px;
+  top: 55px;
+
+  background: #8ed6b5;
+}
+
+
+/* =========================================
+   WISH SCREEN
+========================================= */
+
+.wish-line {
+  width: 100px;
+
+  height: 2px;
+
+  margin: -5px auto 20px;
+
+  background: #e68ca7;
+}
+
+.wish-face {
+  font-size: 65px;
+}
+
+
+/* =========================================
+   FINAL SCREEN
+========================================= */
+
+.final-card h2 {
+  font-size: clamp(38px, 7vw, 52px);
+}
+
+.wish-list {
+  width: 100%;
+
+  max-width: 360px;
+
+  margin-top: 25px;
+
+  display: grid;
+
+  gap: 10px;
+}
+
+.wish-list div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 15px;
+
+  border: 1px solid #f4d8e1;
+
+  border-radius: 10px;
+
+  background: rgba(255,245,248,0.9);
+
+  color: #795b67;
+
+  text-align: left;
+
+  font-size: 14px;
+}
+
+.wish-list span {
+  font-size: 20px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 8;
+}
+
+.confetti span {
+  position: absolute;
+
+  font-size: 25px;
+
+  animation: confettiFall 4s linear infinite;
+}
+
+.confetti span:nth-child(1) {
+  left: 15%;
+}
+
+.confetti span:nth-child(2) {
+  left: 35%;
+
+  animation-delay: 1s;
+}
+
+.confetti span:nth-child(3) {
+  left: 55%;
+
+  animation-delay: 0.5s;
+}
+
+.confetti span:nth-child(4) {
+  left: 70%;
+
+  animation-delay: 1.5s;
+}
+
+.confetti span:nth-child(5) {
+  left: 82%;
+
+  animation-delay: 2s;
+}
+
+.confetti span:nth-child(6) {
+  left: 92%;
+
+  animation-delay: 0.8s;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -50px;
+
+    transform:
+      rotate(0deg)
+      translateX(0);
+  }
+
+  100% {
+    top: 110vh;
+
+    transform:
+      rotate(360deg)
+      translateX(80px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .birthday-screen {
+    padding: 70px 12px 30px;
+  }
+
+  .birthday-card {
+    min-height: 600px;
+
+    padding:
+      55px 20px 35px;
+
+    border-radius: 22px;
+  }
+
+  .birthday-card h1 {
+    font-size: 48px;
+
+    letter-spacing: -1px;
+  }
+
+  .birthday-card h2 {
+    font-size: 38px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .balloon {
+    width: 55px;
+    height: 72px;
+  }
+
+  .balloon::after {
+    top: 70px;
+
+    height: 110px;
+  }
+
+  .b5,
+  .b6 {
+    display: none;
+  }
+
+  .lights {
+    height: 75px;
+  }
+
+  .birthday-card button {
+    font-size: 14px;
+
+    padding: 14px 22px;
+  }
+
+  .cake {
+    transform: scale(0.85);
+    margin-top: 5px;
+  }
+}
