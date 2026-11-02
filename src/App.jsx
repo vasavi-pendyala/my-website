@@ -105,7 +105,7 @@ function App() {
             <p className="subtitle">
               SOMETHING SPECIAL IS
               <br />
-              WAITING FOR YOU...
+              WAITING FOR YOU SISSY...
             </p>
 
             <h1>
