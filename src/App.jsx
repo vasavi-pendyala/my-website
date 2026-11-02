@@ -358,26 +358,26 @@ function App() {
               beautiful memories.
             </p>
 
-            <div className="wish-list">
+            <div className="Letter for you">
 
               <div>
                 <span>💖</span>
-                Lots of Happiness
+                Sometimes gentle,Sometimes fierce.
               </div>
 
               <div>
                 <span>🌟</span>
-                Endless Success
+                Sometimes still, Sometimes untamed.
               </div>
 
               <div>
                 <span>🎁</span>
-                Beautiful Memories
+                Sometimes blooming, Sometimes becoming
               </div>
 
               <div>
                 <span>🌈</span>
-                Dreams Come True
+                U hold contradictions, and that is ur beauty.
               </div>
 
             </div>
