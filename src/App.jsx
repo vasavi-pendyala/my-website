@@ -198,6 +198,8 @@ function App() {
               Because every
               <br />
               birthday needs a cake!
+              <br />
+              And I can't make one for you, so here's a virtual one 🎂
             </p>
 
             {/* Cake */}
@@ -268,7 +270,7 @@ function App() {
             </p>
 
             <button onClick={nextScreen}>
-              My wish is ready ✨
+              Here is what I wish for ✨
             </button>
 
             <div className="dots">
